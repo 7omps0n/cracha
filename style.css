@@ -1,0 +1,95 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+body,
+html{
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  --grey: hsl(240, 9%, 89%);
+  --black: hsl(240, 6%, 13%);
+
+}
+
+body{
+  display: grid;
+  place-items: center;
+}
+
+main{
+  background: url(images/background.svg) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
+}
+/* no repeat pra imagem de fundo não se repetir conforme o tamanho, center pra ela ficar centralizada e cover pra cobrir todo o fundo*/
+/*jeito de usar o background como imagem é chamando com a url*/
+
+.container{
+  max-width: 250px;
+  margin-inline: auto;
+  text-align: center;
+
+  color: var(--grey);
+}
+/*text align é usado pra propriedades de texto*/
+
+.avatar{
+  width: 10rem;
+  margin: 11.5rem auto 0;
+
+  position:relative;
+}
+.avatar span{
+  position: absolute;
+  /*position absolute pode ser usado para sobrepor uma caixa sobrepor a outra*/
+  top: -15px;
+  z-index: 1;
+}
+
+.avatar > img{
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+/* 1- foi usado a tag > para usar apenas a primeira img dentro dessas configs
+2- o object fit é usado pra fazer a imagem caber dentro dos limites estabelecidos*/
+
+h1{
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+a{
+  color: var(--grey);
+  text-decoration: none;
+  margin-top: 0.25rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .75rem;
+}
+/*1 - text decoration usa pra tirar a decoração do link
+2 - align items center é usado pra centralizar dentro da propria caixa no eixo x e y*/
+
+p{
+  margin-top: 2rem;
+}
+
+ul{
+  margin-top: 4rem;
+  display: flex;
+  padding: 0;
+
+  list-style: none;
+  gap: .5rem;
+  justify-content: center;
+}
+/* 1 - para tirar os enfeites da lista usar o list style none
+2 - display flex trabalha com elementos UM AO LADO DO OUTRO
+3 - justify content center centraliza o display flex no eixo x*/
